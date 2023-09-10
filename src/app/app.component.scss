@@ -25,14 +25,21 @@
 .nav__menu {
   position: absolute;
   transform: translateY(-200%);
-
   top: 100%;
   width: 100%;
   left: 0;
   transition: all ease-in-out .4s;
 }
+.nav__logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'Rubik Iso', cursive;
+  font-style: italic;
+  color: #ff8c92;
+}
 .header__button {
-  color: #263238;
+  color: inherit;
 }
 .header__button:hover {
   background-color: bisque;
@@ -149,7 +156,7 @@ details.menu_toggle {
   filter: blur(100px);
 }
 
-.about__main {
+.section__spacing-horizontal {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -169,4 +176,70 @@ details.menu_toggle {
   color: $secondary;
   font-weight: 600;
   margin-top: 1.25rem;
+}
+
+.form__field-wrap {
+  margin-bottom: 1.5rem;
+  .form-control {
+    outline: none;
+    line-height: 2.5;
+    border-radius: 20px;
+    background: #efefef;
+    padding: 0.375rem 1rem;
+    &::placeholder {
+      font-weight: 500;
+    }
+    &.error {
+      border-color: #dc3545 !important;
+      caret-color: #dc3545;
+      &::placeholder {
+        color: #dc3545;
+      }
+    }
+    &:focus-visible {
+      box-shadow: none;
+      border-color: #ff8c92;
+      background: #ffffff;
+    }
+  }
+}
+
+.icon_msg {
+  .message {
+    fill: #4e4e4e;
+    transition: all 0.2s linear;
+  }
+  .stick {
+    fill: #ffffff;
+    transition: all 0.2s linear;
+    path {
+      fill: #ffffff;
+      transition: all 0.2s linear;
+    }
+  }
+}
+
+a.btn-huge:hover {
+  .icon_msg {
+    .message {
+      fill: #ffff55;
+    }
+    .stick {
+      fill: #ffa350;
+      path {
+        fill: #ffa350;
+      }
+    }
+  }
+}
+
+.social-flexing {
+  display: flex;
+  align-items: center;
+  .social-item {
+    color: #ff8c92;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
 }

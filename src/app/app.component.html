@@ -1,15 +1,35 @@
 <section class="section-fc section-primary" id="home">
   <nav class="header-wrap">
-    <div class="header__nav-container">
-      <a class="nav__logo" href="#">#k4</a>
+    <div class="header__nav-container container">
+      <a class="nav__logo" href="#">KH4N9</a>
       <div class="nav__menu">
         <nav class="header__nav" id="navbarNav">
-          <a href="#home" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'home'}" (click)="changePage('home')">Home</a>
-          <a href="#about" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'about'}" (click)="changePage('about')">About</a>
-          <a href="#contact" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'contact'}" (click)="changePage('contact')">Contact</a>
-          <a href="#playground" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'playground'}" (click)="changePage('playground')">Playground</a>
+          <a href="#home" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'home'}"
+            (click)="changePage('home')">Home</a>
+          <a href="#about" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'about'}"
+            (click)="changePage('about')">About</a>
+          <a href="#contact" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'contact'}"
+            (click)="changePage('contact')">Contact</a>
+          <a href="#playground" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'playground'}"
+            (click)="changePage('playground')">Playground</a>
         </nav>
-        <a href="#chat" class="header__button btn-huge btn-white d-none d-lg-block">Let's Chat <i class="ms-2 fa-solid fa-comment-dots"></i></a>
+        <a href="#chat" class="header__button btn-huge btn-white d-none d-lg-block">
+          Let's chat
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon_msg"
+            xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0" y="0" viewBox="0 0 32 32"
+            xml:space="preserve">
+            <g>
+              <path
+                d="M16 2A13.992 13.992 0 0 0 3.6 22.485l-1.57 6.273A1 1 0 0 0 3 30a.983.983 0 0 0 .243-.03l6.272-1.57A14 14 0 1 0 16 2z"
+                data-original="#ffff55" class="message" />
+              <g class="stick">
+                <path
+                  d="M22 10H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM22 15H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM16 20h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"
+                  data-original="#ffa350" opacity="1" />
+              </g>
+            </g>
+          </svg>
+        </a>
       </div>
       <details #detail class="nav__btn-collapse menu_toggle">
         <summary class="icon_hamburger">
@@ -41,13 +61,12 @@
         <div class="bg-green-gradient">
         </div>
         <img src="./assets/images/hero_thumb.png" class="hero__main-avatar" loading="lazy">
-        <!-- <img src="./assets/images/web_developer.svg" class="hero__main-avatar" loading="lazy"> -->
       </div>
     </div>
   </div>
 </section>
-<section id="about" class="section-fc">
-  <div class="container about__main">
+<section id="about" class="section-fc d-flex align-items-center">
+  <div class="container section__spacing-horizontal">
     <div class="d-grid d-lg-flex align-items-start gap__v-2 gap__h-2">
       <div class="intro">
         <h1 class="ka__txt-primary txt-huge text-uppercase fw-bold">{{information.exp}}</h1>
@@ -57,7 +76,8 @@
         </p>
       </div>
       <div class="coding-wrapper">
-        <img class="intro-coding-image" src="./assets/images/coding.png" loading="lazy" alt="Intro Coding Image" srcset="https://assets.website-files.com/62eb5311728cd914e53b634a/62f1fada03397b8970126c10_experience-intro-image-1-p-500.png 500w, https://assets.website-files.com/62eb5311728cd914e53b634a/62f1fada03397b8970126c10_experience-intro-image-1.png 550w">
+        <img class="intro-coding-image" src="./assets/images/coding.png" loading="lazy" alt="Intro Coding Image"
+          srcset="https://assets.website-files.com/62eb5311728cd914e53b634a/62f1fada03397b8970126c10_experience-intro-image-1-p-500.png 500w, https://assets.website-files.com/62eb5311728cd914e53b634a/62f1fada03397b8970126c10_experience-intro-image-1.png 550w">
         <h4 class="intro-coding-title">
           Coding &
           <br>
@@ -65,6 +85,94 @@
         </h4>
       </div>
     </div>
-
+  </div>
+</section>
+<section id="contact" class="section-fc d-flex align-items-center">
+  <div class="container section__spacing-horizontal">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <img src="./assets/images/mailbox.svg" alt="mailbox">
+      </div>
+      <div class="col-12 col-lg-6">
+        <form [formGroup]="contactForm">
+          <h2 class="text-center fw-bold mb-4">Get in touch</h2>
+          <div class="form__field-wrap">
+            <input type="text" formControlName="fullName" placeholder="Full name *" required maxlength="80"
+              class="form-control"
+              [ngClass]="{'error': contactForm.touched && contactForm.invalid && contactForm.get('fullName')?.hasError('required')}">
+          </div>
+          <div class="form__field-wrap">
+            <input type="email" formControlName="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="form__field-wrap">
+            <input type="text" formControlName="subject" class="form-control" placeholder="Subject">
+          </div>
+          <div class="form__field-wrap">
+            <textarea type="text" formControlName="msg" rows="5" class="form-control"
+              placeholder="How can I help you?"></textarea>
+          </div>
+          <button class="float-end btn-huge ka-oline-secondary btn_ka-secondary" (click)="sendMail()">Send
+            message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="footer">
+  <div class="container section__spacing-horizontal">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <a class="nav__logo" href="#">KH4N9</a>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h2 class="fw-bold mb-4">Connect to me</h2>
+        <p class="text-secondary">
+          <label class="w-100">Thanh Tri ward,</label>
+          <label class="w-100">Ha Dong district, Hanoi city</label>
+        </p>
+        <a class="ka__link d-block mb-3" href="mailto:ka.0709fe@gmail.com">
+          <i class="bi bi-envelope-at"></i> ka.0709fe@gmail.com
+        </a>
+        <a class="ka__link d-block mb-3" href="tel:+84386624545">
+          <i class="bi bi-telephone"></i> 0386624545
+        </a>
+        <div class="social-flexing">
+          <a href="https://facebook.com/khangpm2" target="_blank" rel="noopener noreferrer" class="social-item">
+            <i class="fs-4 bi bi-facebook"></i>
+          </a>
+          <a href="https://t.me/kh4n9" target="_blank" rel="noopener noreferrer" class="social-item">
+            <i class="fs-4 bi bi-telegram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/khang-b%C3%B9i-%C4%91%C3%ACnh-b06a93261" target="_blank" rel="noopener noreferrer" class="social-item">
+            <i class="fs-4 bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/kh4n998" target="_blank" rel="noopener noreferrer" class="social-item">
+            <i class="fs-4 bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="text-center">
+          <h2 class="text-center fw-bold mb-4">Thanks for visiting</h2>
+          <a href="#chat" class="ka-oline-white btn-huge d-inline-block">
+            Let's chat
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon_msg"
+            xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0" y="0" viewBox="0 0 32 32"
+            xml:space="preserve">
+            <g>
+              <path
+                d="M16 2A13.992 13.992 0 0 0 3.6 22.485l-1.57 6.273A1 1 0 0 0 3 30a.983.983 0 0 0 .243-.03l6.272-1.57A14 14 0 1 0 16 2z"
+                data-original="#ffff55" class="message" />
+              <g class="stick">
+                <path
+                  d="M22 10H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM22 15H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM16 20h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"
+                  data-original="#ffa350" opacity="1" />
+              </g>
+            </g>
+          </svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
