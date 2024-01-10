@@ -1,31 +1,31 @@
-<section class="section-fc section-primary" id="home">
-  <nav class="header-wrap">
-    <div class="header__nav-container container">
-      <a class="nav__logo" href="#">KH4N9</a>
-      <div class="nav__menu">
-        <nav class="header__nav" id="navbarNav">
-          <a href="#home" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'home'}"
+<section class="min-h-screen section-primary" id="home">
+  <nav class="relative z-[1000] lg:p-[2rem] p-[1.25rem]">
+    <div class="flex items-center justify-between container mx-auto">
+      <a class="no-underline font-bold text-5xl font-rubik italic text-[#ff8c92]" href="#">KH4N9</a>
+      <div class="nav__menu lg:flex lg:relative absolute lg:items-center lg:visible -translate-y-full top-full left-0 lg:transform-none transition-all ease-in duration-300 lg:w-auto w-full">
+        <nav class="header__nav mx-5 lg:mx-10 lg:flex lg:bg-transparent my-0" id="navbarNav">
+          <a href="#home" class="header__nav-link py-3 px-4 text-lg font-semibold block  no-underline hover:text-[#ff8c92] lg:p-5" [class]="currentPage === 'home' ? 'text-[#ff8c92]' : 'text-[#263238]'"
             (click)="changePage('home')">Home</a>
-          <a href="#about" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'about'}"
+          <a href="#about" class="header__nav-link py-3 px-4 text-lg font-semibold block no-underline hover:text-[#ff8c92] lg:p-5" [class]="currentPage === 'about' ? 'text-[#ff8c92]' : 'text-[#263238]'"
             (click)="changePage('about')">About</a>
-          <a href="#contact" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'contact'}"
+          <a href="#contact" class="header__nav-link py-3 px-4 text-lg font-semibold block no-underline hover:text-[#ff8c92] lg:p-5" [class]="currentPage === 'contact' ? 'text-[#ff8c92]' : 'text-[#263238]'"
             (click)="changePage('contact')">Contact</a>
-          <a href="#playground" class="header__nav-link" [ngClass]="{'nav-active': currentPage === 'playground'}"
+          <a href="#playground" class="header__nav-link py-3 px-4 text-lg font-semibold block no-underline hover:text-[#ff8c92] lg:p-5" [class]="currentPage === 'playground' ? 'text-[#ff8c92]' : 'text-[#263238]'"
             (click)="changePage('playground')">Playground</a>
         </nav>
-        <a href="#chat" class="header__button btn-huge btn-white d-none d-lg-block">
+        <a href="#chat" class="group text-inherit hover:bg-[bisque] hover:border-[bisque] bg-white border-1s-white transition-all btn-huge no-underline hidden lg:flex-center">
           Let's chat
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon_msg"
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ml-1 inline"
             xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0" y="0" viewBox="0 0 32 32"
             xml:space="preserve">
             <g>
               <path
                 d="M16 2A13.992 13.992 0 0 0 3.6 22.485l-1.57 6.273A1 1 0 0 0 3 30a.983.983 0 0 0 .243-.03l6.272-1.57A14 14 0 1 0 16 2z"
-                data-original="#ffff55" class="message" />
-              <g class="stick">
+                class="fill-[#4e4e4e] group-hover:fill-[#ffff55]"/>
+              <g fill="#ffffff" class=" group-hover:fill-[#ffa350]">
                 <path
                   d="M22 10H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM22 15H10a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2zM16 20h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"
-                  data-original="#ffa350" opacity="1" />
+                  fill="#ffffff" opacity="1" class="group-hover:fill-[#ffa350]"/>
               </g>
             </g>
           </svg>
@@ -65,7 +65,7 @@
     </div>
   </div>
 </section>
-<section id="about" class="section-fc d-flex align-items-center">
+<section id="about" class="min-h-screen d-flex align-items-center">
   <div class="container section__spacing-horizontal">
     <div class="d-grid d-lg-flex align-items-start gap__v-2 gap__h-2">
       <div class="intro">
@@ -87,7 +87,7 @@
     </div>
   </div>
 </section>
-<section id="contact" class="section-fc d-flex align-items-center">
+<section id="contact" class="min-h-screen d-flex align-items-center">
   <div class="container section__spacing-horizontal">
     <div class="row">
       <div class="col-12 col-lg-6">
